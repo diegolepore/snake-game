@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  /* border: 1px solid #000; */
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+}
+
+.row {
+  display: flex;
+  background-color: #434d54;
+}
+
+.row:not(:last-child) .cell {
+  border-bottom: 1px solid #000;
+}
+
+.row .cell:not(:last-child) {
+  border-right: 1px solid #000;
+}
+
+.snake {
+  position: absolute;
+}
+
+.snake__head {
+  width: 9.5px;
+  height: 9.5px;
+  background-color: aquamarine;
+  position: absolute;
+}
+
+.snake__tail {
+  width: 9.5px;
+  height: 9.5px;
+  background-color: aquamarine;
+  position: absolute;
+}
