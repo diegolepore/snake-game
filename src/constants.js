@@ -1,1 +1,1 @@
-export const TICK_RATE = 500;
+export const TICK_RATE = 200;

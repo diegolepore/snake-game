@@ -34,11 +34,20 @@
   height: 9.5px;
   background-color: aquamarine;
   position: absolute;
+  z-index: 2;
 }
 
 .snake__tail {
   width: 9.5px;
   height: 9.5px;
   background-color: aquamarine;
+  position: absolute;
+  z-index: 2;
+}
+
+.food {
+  width: 9.5px;
+  height: 9.5px;
+  background-color: rgb(230, 49, 49);
   position: absolute;
 }
