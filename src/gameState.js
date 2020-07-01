@@ -1,4 +1,5 @@
 const gameState = {
+  tickRate: 150,
   boardDimentions: {
     rows: 30,
     cols: 30,
@@ -8,10 +9,3 @@ const gameState = {
 };
 
 export default gameState;
-
-/*
-  INIT
-  MOVING
-  EATING
-  CRASHING
-*/

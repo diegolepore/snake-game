@@ -4,8 +4,8 @@ const { boardDimentions } = gameState;
 
 export default class Food {
   constructor() {
-    this.randomLeft = -1;
-    this.randomTop = -1;
+    this.randomLeft = null;
+    this.randomTop = null;
   }
 
   randomFoodRelocation() {
@@ -18,7 +18,7 @@ export default class Food {
     food.style.top = `${this.randomTop}px`;
   }
 
-  initFood() {
+  init() {
     this.randomFoodRelocation();
   }
 }

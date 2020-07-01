@@ -1,17 +1,23 @@
 import gameState from "./gameState";
 import Snake from "./snake";
-import initBoard from "./board";
-import initControls from "./controls";
+import Board from "./board";
 import Food from "./food";
-import { TICK_RATE } from "./constants";
+import Controls from "./controls";
 
 function init() {
-  const { rows, cols, cellWidth, cellHeight } = gameState.boardDimentions;
+  const { boardDimentions, tickRate } = gameState;
+  const { rows, cols, cellWidth, cellHeight } = boardDimentions;
+
+  // Objects instances
+  const BoardObj = new Board();
+  const ControlsObj = new Controls();
   const SnakeObj = new Snake();
   const FoodObj = new Food();
-  initBoard(rows, cols, cellWidth, cellHeight);
-  initControls(SnakeObj);
-  FoodObj.initFood();
+
+  // Initializations
+  BoardObj.init(rows, cols, cellWidth, cellHeight);
+  ControlsObj.init(SnakeObj);
+  FoodObj.init();
 
   let nextTimeToTick = Date.now();
 
@@ -19,7 +25,7 @@ function init() {
     let now = Date.now();
 
     if (nextTimeToTick <= now) {
-      nextTimeToTick = now + TICK_RATE;
+      nextTimeToTick = now + tickRate;
       SnakeObj.moveSnake(FoodObj);
     }
     requestAnimationFrame(nextAnimationFrame);
